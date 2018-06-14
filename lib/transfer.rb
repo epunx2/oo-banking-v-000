@@ -1,6 +1,6 @@
 class Transfer
   # your code here
-  def initialize(send_account, receive_account, amount)
+  def initialize(sender, receiver, amount)
 
   end
 end
