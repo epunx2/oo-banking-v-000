@@ -19,9 +19,13 @@ class Transfer
 
   def execute_transaction
     if !(@status == "complete")
-      @sender.withdrawal(@amount)
-      @receiver.deposit(@amount)
-      @status = "complete"
+      if !(@sender.valid?)
+        "Transaction rejected. Please check your account balance."
+      else
+        @sender.withdrawal(@amount)
+        @receiver.deposit(@amount)
+        @status = "complete"
+      end
     end
   end
 end
