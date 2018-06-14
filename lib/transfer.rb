@@ -16,4 +16,8 @@ class Transfer
       false
     end
   end
+
+  def execute_transaction
+    @receiver.deposit(@amount)
+  end
 end
